@@ -1,30 +1,25 @@
 'use client';
-
+import styles from "./page.module.css"
 import { useState } from 'react';
 import InputForm from './components/input-form';
+import Header from './components/header/view';
+import Link from "next/link";
 
 const Home = () => {
-  const [submittedData, setSubmittedData] = useState<string | null>(null);
-
-  const handleDataSubmit = (data: string) => {
-    setSubmittedData(data);
-    // Here you can handle the submitted data, e.g., send it to an API
-  };
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100">
-      <h1 className="text-2xl font-bold mb-4 text-black">
-        Submit Your Information
-      </h1>
-      <InputForm onSubmit={handleDataSubmit} />
-      {submittedData && (
-        <div className="mt-4 p-4 bg-white border rounded shadow">
-          <h2 className="font-semibold">Submitted Data:</h2>
-          <p>{submittedData}</p>
+    <div>
+      <Header/>
+      <div className={styles.bodyDiv}>
+        <div className={styles.navBar}>
+          <Link className={styles.active} href="">Home</Link>
+          <Link href="/search">Search</Link>
         </div>
-      )}
-      <h1 className="text-2xl font-bold mb-4">Submit Information</h1>
+        <h1 className={styles.bodyTitle}>Today's Hottest News</h1>
+      </div>
+
     </div>
+    
   );
 };
 
