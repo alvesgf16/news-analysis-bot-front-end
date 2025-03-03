@@ -39,7 +39,7 @@
     justify-self: center;
     font-size: 2rem;
     font-weight: bold;
-    padding-top: 0.5rem;
+    padding: 0.5rem 0;
 }
 
 .navBar {
@@ -53,4 +53,21 @@
 
 .navBar a.active {
     text-decoration: underline;
+}
+
+.cardDiv {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.cardContainer {
+    width: fit-content;
+    border: 1px solid black;
+    margin: auto;
+}
+
+.image {
+    border-bottom: 1px solid black;
 }
